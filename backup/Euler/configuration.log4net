@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<log4net debug="false">
+
+  <!--<root>
+    <level value="Info"/>
+    <appender-ref ref="AsyncAppender"/>
+    <appender-ref ref="ConsoleAppender"/>
+  </root>-->
+
+  <!--<appender name="AsyncAppender" type="DevFi.Tools.AsyncAppender, DevFi.Tools">
+    <appender-ref ref="RollingFileAppender"/>
+    <appender-ref ref="SmtpWithAttachmentAppender"/>
+    <param name="Priority" value="BelowNormal"/>
+    <param name="EnableThreadId" value="true"/>
+  </appender>-->
+
+  <appender name="AsyncAppenderData" type="DevFi.Tools.AsyncAppender, DevFi.Tools">
+    <threshold value="ERROR" />
+    <appender-ref ref="RollingFileAppenderData"/>
+    <appender-ref ref="SmtpWithAttachmentAppender"/>
+    <param name="Priority" value="BelowNormal"/>
+    <param name="EnableThreadId" value="true"/>
+  </appender>
+
+  <appender name="AsyncAppenderUpdate" type="DevFi.Tools.AsyncAppender, DevFi.Tools">
+    <threshold value="ERROR" />
+    <appender-ref ref="RollingFileAppenderUpdate"/>
+    <appender-ref ref="SmtpWithAttachmentAppender"/>
+    <param name="Priority" value="BelowNormal"/>
+    <param name="EnableThreadId" value="true"/>
+  </appender>
+  
+  <appender name="SmtpWithAttachmentAppender" type="DevFi.Tools.SmtpWithAttachmentAppender,DevFi.Tools">
+    <threshold value="ERROR" />
+    <evaluator type="log4net.Core.LevelEvaluator,log4net">
+      <threshold value="FATAL" />
+    </evaluator>
+    <to value="LD-M-BASECREDIT_DEV@exchange.cmi.net" />
+    <from value="LD-M-BASECREDIT_DEV@exchange.cmi.net" />
+    <subject value="Error while processing" />
+    <smtpHost value="srvsmtp" />
+    <bufferSize value="512" />
+    <lossy value="false" />
+    <attachment value="Opus.log" />
+    <layout type="log4net.Layout.PatternLayout,log4net">
+      <conversionPattern value="%property{log4net:HostName} :: %level :: %message %newlineLogger: %logger%newlineThread: %thread%newlineDate: %date%newlineNDC: %property{NDC}%newline%newline" />
+    </layout>
+  </appender>
+
+  <!--<appender name="RollingFileAppender" type="log4net.Appender.RollingFileAppender">
+    <file value="Opus.log" />
+    <appendToFile value="true" />
+    <rollingStyle value="Size" />
+    <maxSizeRollBackups value="10" />
+    <maximumFileSize value="200KB" />
+    <staticLogFileName value="true" />
+    <layout type="log4net.Layout.PatternLayout">
+      <conversionPattern value="%date [%thread] %-5level %logger - %message%newline" />
+    </layout>
+  </appender>-->
+
+  <appender name="RollingFileAppenderData" type="log4net.Appender.RollingFileAppender">
+    <file value="OpusData.log" />
+    <appendToFile value="true" />
+    <rollingStyle value="Size" />
+    <maxSizeRollBackups value="10" />
+    <maximumFileSize value="200KB" />
+    <staticLogFileName value="true" />
+    <layout type="log4net.Layout.PatternLayout">
+      <conversionPattern value="%date [%thread] %-5level %logger - %message%newline" />
+    </layout>
+  </appender>
+
+  <appender name="RollingFileAppenderUpdate" type="log4net.Appender.RollingFileAppender">
+    <file value="OpusUpdate.log" />
+    <appendToFile value="true" />
+    <rollingStyle value="Size" />
+    <maxSizeRollBackups value="10" />
+    <maximumFileSize value="200KB" />
+    <staticLogFileName value="true" />
+    <layout type="log4net.Layout.PatternLayout">
+      <conversionPattern value="%date [%thread] %-5level %logger - %message%newline" />
+    </layout>
+  </appender>
+
+  <appender name="MonitoringDataBaseAppenderProd" type="log4net.Appender.AdoNetAppender">
+    <threshold value="ERROR" />
+    <bufferSize value="1" />
+    <connectionType value="System.Data.Odbc.OdbcConnection, System.Data, version=1.0.3300.0, publicKeyToken=b77a5c561934e089, culture=neutral" />
+    <connectionString value="Driver={SYBASE ASE ODBC Driver};IF=\\cm.net\shareparis\Salle\Softs\Sybclient\oc_1251\ini\sql.ini;IFSN=SYBASE_CREDITS;DB=CREDITS;UID=credits_dbo;PWD=choucroute;" />
+    <commandText value="{ call ps_log_anomalie ( @job = ?, @anomalie = ? ) }" />
+    <parameter>
+      <parameterName value="@job" />
+      <dbType value="String" />
+      <size value="255" />
+      <layout type="log4net.Layout.PatternLayout">
+        <conversionPattern value="%logger" />
+      </layout>
+    </parameter>
+    <parameter>
+      <parameterName value="@anomalie" />
+      <dbType value="String" />
+      <size value="10000" />
+      <layout type="log4net.Layout.PatternLayout">
+        <conversionPattern value="%message" />
+      </layout>
+    </parameter>
+  </appender>
+
+  <appender name="MonitoringDataBaseAppenderPrex" type="log4net.Appender.AdoNetAppender">
+    <threshold value="ERROR" />
+    <bufferSize value="1" />
+    <connectionType value="System.Data.Odbc.OdbcConnection, System.Data, version=1.0.3300.0, publicKeyToken=b77a5c561934e089, culture=neutral" />
+    <connectionString value="Driver={SYBASE ASE ODBC Driver};IF=\\cm.net\shareparis\Salle\Softs\Sybclient\oc_1251\ini\sql.ini;IFSN=MP_SV_TPBI;DB=CREDITS;UID=credits_dbo;PWD=choucroute;" />
+    <commandText value="{ call ps_log_anomalie ( @job = ?, @anomalie = ? ) }" />
+    <parameter>
+      <parameterName value="@job" />
+      <dbType value="String" />
+      <size value="255" />
+      <layout type="log4net.Layout.PatternLayout">
+        <conversionPattern value="%logger" />
+      </layout>
+    </parameter>
+    <parameter>
+      <parameterName value="@anomalie" />
+      <dbType value="String" />
+      <size value="10000" />
+      <layout type="log4net.Layout.PatternLayout">
+        <conversionPattern value="%message" />
+      </layout>
+    </parameter>
+  </appender>
+
+  <appender name="MonitoringDataBaseAppenderRecette" type="log4net.Appender.AdoNetAppender">
+    <threshold value="ERROR" />
+    <bufferSize value="1" />
+    <connectionType value="System.Data.Odbc.OdbcConnection, System.Data, version=1.0.3300.0, publicKeyToken=b77a5c561934e089, culture=neutral" />
+    <connectionString value="Driver={SYBASE ASE ODBC Driver};IF=\\cm.net\shareparis\Salle\Softs\Sybclient\oc_1251\ini\sql.ini;IFSN=MU_SV_TPBI;DB=CREDITS;UID=credits_dbo;PWD=credits_dbo;" />
+    <commandText value="{ call ps_log_anomalie ( @job = ?, @anomalie = ? ) }" />
+    <parameter>
+      <parameterName value="@job" />
+      <dbType value="String" />
+      <size value="255" />
+      <layout type="log4net.Layout.PatternLayout">
+        <conversionPattern value="%logger" />
+      </layout>
+    </parameter>
+    <parameter>
+      <parameterName value="@anomalie" />
+      <dbType value="String" />
+      <size value="10000" />
+      <layout type="log4net.Layout.PatternLayout">
+        <conversionPattern value="%message" />
+      </layout>
+    </parameter>
+  </appender>
+  
+  <appender name="ConsoleAppender" type="log4net.Appender.ConsoleAppender">
+    <layout type="log4net.Layout.PatternLayout">
+      <conversionPattern value="%date [%thread] %-5level %logger [%property{NDC}] - %message%newline" />
+    </layout>
+  </appender>
+
+  <logger name="OPUS.Data">
+    <level value="INFO" />
+    <appender-ref ref="AsyncAppenderData"/>
+    <appender-ref ref="ConsoleAppender"/>
+    <appender-ref ref="MonitoringDataBaseAppenderProd"/>    
+  </logger>
+
+  <logger name="OPUS.Update">
+    <level value="INFO" />
+    <appender-ref ref="AsyncAppenderUpdate"/>
+    <appender-ref ref="ConsoleAppender"/>
+    <appender-ref ref="MonitoringDataBaseAppenderProd"/>
+  </logger>
+
+</log4net>

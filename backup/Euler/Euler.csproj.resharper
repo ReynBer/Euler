@@ -1,0 +1,10 @@
+<Configuration>
+  <NamespaceFolders>
+    <SkipFolder>2B7A804B-EA28-4E63-A48F-D28261276DBA/d:Problems/d:102</SkipFolder>
+    <SkipFolder>2B7A804B-EA28-4E63-A48F-D28261276DBA/d:Problems/d:21</SkipFolder>
+    <SkipFolder>2B7A804B-EA28-4E63-A48F-D28261276DBA/d:Problems/d:24</SkipFolder>
+    <SkipFolder>2B7A804B-EA28-4E63-A48F-D28261276DBA/d:Problems/d:61</SkipFolder>
+    <SkipFolder>2B7A804B-EA28-4E63-A48F-D28261276DBA/d:Problems/d:62</SkipFolder>
+    <SkipFolder>2B7A804B-EA28-4E63-A48F-D28261276DBA/d:Problems/d:96</SkipFolder>
+  </NamespaceFolders>
+</Configuration>

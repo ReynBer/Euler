@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2B7A804B-EA28-4E63-A48F-D28261276DBA}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Euler</RootNamespace>
+    <AssemblyName>Euler</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\binaries\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.4.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\binaries\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\Problem.cs" />
+    <Compile Include="BigInt.cs" />
+    <Compile Include="Binary.cs" />
+    <Compile Include="Euclide.cs" />
+    <Compile Include="PrimaryGenerator.cs" />
+    <Compile Include="PrimeLong.cs" />
+    <Compile Include="Problems\100\Problem100.cs" />
+    <Compile Include="Problems\102\Point3D.cs" />
+    <Compile Include="Problems\102\Problem102.cs" />
+    <Compile Include="Problems\102\Vector3D.cs" />
+    <Compile Include="Problems\10\Problem10.cs" />
+    <Compile Include="Problems\11\Problem11.cs" />
+    <Compile Include="Problems\12\Problem12.cs" />
+    <Compile Include="Problems\13\Problem13.cs" />
+    <Compile Include="Problems\14\Problem14.cs" />
+    <Compile Include="Problems\15\Problem15.cs" />
+    <Compile Include="Problems\16\Problem16.cs" />
+    <Compile Include="Problems\17\Problem17.cs" />
+    <Compile Include="Problems\18\Problem18.cs" />
+    <Compile Include="Problems\19\Problem19.cs" />
+    <Compile Include="Problems\1\Problem1.cs" />
+    <Compile Include="Problems\20\Problem20.cs" />
+    <Compile Include="Problems\21\Problem21.cs" />
+    <Compile Include="Problems\22\Problem22.cs" />
+    <Compile Include="Problems\23\Problem23.cs" />
+    <Compile Include="Problems\24\Problem24.cs" />
+    <Compile Include="Problems\25\Problem25.cs" />
+    <Compile Include="Problems\26\Problem26.cs" />
+    <Compile Include="Problems\27\Problem27.cs" />
+    <Compile Include="Problems\28\Problem28.cs" />
+    <Compile Include="Problems\29\Problem29.cs" />
+    <Compile Include="Problems\2\Problem2.cs" />
+    <Compile Include="Problems\30\Problem30.cs" />
+    <Compile Include="Problems\31\Problem31.cs" />
+    <Compile Include="Problems\32\Problem32.cs" />
+    <Compile Include="Problems\33\Problem33.cs" />
+    <Compile Include="Problems\34\Problem34.cs" />
+    <Compile Include="Problems\35\Problem35.cs" />
+    <Compile Include="Problems\36\Problem36.cs" />
+    <Compile Include="Problems\37\Problem37.cs" />
+    <Compile Include="Problems\38\Problem38.cs" />
+    <Compile Include="Problems\39\Problem39.cs" />
+    <Compile Include="Problems\3\Problem3.cs" />
+    <Compile Include="Problems\40\Problem40.cs" />
+    <Compile Include="Problems\41\Problem41.cs" />
+    <Compile Include="Problems\42\Problem42.cs" />
+    <Compile Include="Problems\43\Problem43.cs" />
+    <Compile Include="Problems\44\Problem44.cs" />
+    <Compile Include="Problems\45\Problem45.cs" />
+    <Compile Include="Problems\48\Problem48.cs" />
+    <Compile Include="Problems\4\Problem4.cs" />
+    <Compile Include="Problems\53\Problem53.cs" />
+    <Compile Include="Problems\5\Problem5.cs" />
+    <Compile Include="Problems\61\Digit.cs" />
+    <Compile Include="Problems\61\Problem61.cs" />
+    <Compile Include="Problems\62\Problem62.cs" />
+    <Compile Include="Problems\67\Problem67.cs" />
+    <Compile Include="Problems\6\Problem6.cs" />
+    <Compile Include="Problems\7\Problem7.cs" />
+    <Compile Include="Problems\8\Problem8.cs" />
+    <Compile Include="Problems\96\CaseSudokuGrid.cs" />
+    <Compile Include="Problems\96\Problem96.cs" />
+    <Compile Include="Problems\9\Problem9.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Problems\96\SudokuGrid.cs" />
+    <Compile Include="Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Trash.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Resources\triangles.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\problem18Test.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\problem18.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="configuration.log4net" />
+    <None Include="Resources\problem67.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\problem22.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\problem13.txt" />
+    <None Include="Resources\Problem42.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
